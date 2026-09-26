@@ -1,0 +1,13 @@
+# secrets
+.env
+*.env.local
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+# node
+frontend/node_modules/
+frontend/dist/
+# logs
+*.log
