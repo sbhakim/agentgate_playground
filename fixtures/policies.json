@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {"email": "coordinator@umbc-club.test", "name": "Club Coordinator", "class": "internal"},
+    {"email": "treasurer@umbc-club.test", "name": "Club Treasurer", "class": "internal"},
+    {"email": "sponsor@partner.test", "name": "Corporate Sponsor", "class": "external"},
+    {"email": "recruiter@outside-mail.test", "name": "Unknown Recruiter", "class": "external"}
+  ],
+  "presets": {
+    "normal": {
+      "allowed_documents": ["club-notes"],
+      "allowed_recipients": ["coordinator@umbc-club.test"],
+      "always_require_approval": true
+    },
+    "restricted": {
+      "allowed_documents": ["club-notes"],
+      "allowed_recipients": ["coordinator@umbc-club.test"],
+      "always_require_approval": true
+    },
+    "sensitive": {
+      "allowed_documents": ["club-notes", "club-budget"],
+      "allowed_recipients": ["coordinator@umbc-club.test", "sponsor@partner.test"],
+      "always_require_approval": false
+    }
+  }
+}
