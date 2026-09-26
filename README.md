@@ -2,4 +2,13 @@
 
 A small sandbox where an AI assistant proposes tool calls and a policy gate decides whether each one runs. All tools are simulated; no real email or file access.
 
-This project was started on hackUMBC 2026 (September 26–27) event. Its existing code is being added to this repository in stages.
+## What it shows
+
+- The assistant reads synthetic club documents and proposes actions: read a document, write a draft, send a draft.
+- Each proposal is checked against explicit rules and is **allowed**, **denied**, or **held for human approval**.
+- Documents carry a data label (`public`, `internal`, `confidential`), and drafts inherit the highest label read, so sensitive content can't be sent to the wrong people.
+- Hidden instructions inside documents can't press the approval button.
+
+## Status
+
+Built on an existing prototype; work during hackUMBC 2026 (September 26–27) is committed here in stages. Setup and run instructions will be added once the app code is in place.
