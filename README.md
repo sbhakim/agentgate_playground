@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/agentgate-logo.png" alt="AgentGate Playground logo" width="420">
+</p>
+
 # AgentGate Playground
 
 A small sandbox where an AI assistant proposes tool calls and a policy gate decides whether each one runs. All tools are simulated; no real email or file access.
@@ -11,10 +15,14 @@ A small sandbox where an AI assistant proposes tool calls and a policy gate deci
 
 ## Status
 
+<img src="docs/images/hackumbc-logo.png" alt="hackUMBC logo" width="160" align="right">
+
 Built on an existing prototype; work during hackUMBC 2026 (September 26–27) is committed here in stages. Setup and run instructions will be added once the app code is in place.
 
-Here are the link to the Slides of AgentPlayground created on HackUMBC 2026 ( https://drive.google.com/file/d/1Wmle25lBTUHrTIq3dQIS7yHTcB2r3Rxr/view?usp=drivesdk )
+## Presentation materials
 
-Infographic Poster Simple made in AI (https://drive.google.com/file/d/1ppJHhx0uRkV_1f2pGMt3KwKLJKUoy9Ro/view?usp=drivesdk )
+- [Slides](https://drive.google.com/file/d/1Wmle25lBTUHrTIq3dQIS7yHTcB2r3Rxr/view?usp=drivesdk), made at hackUMBC 2026
+- [Infographic poster](https://drive.google.com/file/d/1ppJHhx0uRkV_1f2pGMt3KwKLJKUoy9Ro/view?usp=drivesdk), made with AI tools
+- [Infographic poster, first Canva draft](https://canva.link/x3sukdnx0kvvdy1)
 
-Infographic Poster initial Canva draft (https://canva.link/x3sukdnx0kvvdy1 ) 
+The hackUMBC logo belongs to hackUMBC and is used here only to identify the event.
