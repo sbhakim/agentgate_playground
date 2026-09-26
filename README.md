@@ -15,7 +15,7 @@ A small sandbox where an AI assistant proposes tool calls and a policy gate deci
 
 ## Status
 
-The repo is inspired by the existing work CaMeL and AgetnDojo and then further developed during hackUMBC 2026 (September 26–27) is committed here in stages. Setup and run instructions will be added once the app code is in place.
+Setup and run instructions will be added once the app code is in place. Credits and inspiration (CaMeL, AgentDojo, and others) are listed in [`docs/credits.md`](docs/credits.md).
 
 ## Presentation materials
 
