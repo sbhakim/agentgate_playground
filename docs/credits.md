@@ -25,6 +25,4 @@ The team also used Google Gemini at several stages of project development. This 
 
 Thanks to Major League Hacking (MLH) and its partners for facilitating access to developer resources, including Backboard and the Google Gemini API. Resource access does not mean those services are integrated into this codebase.
 
-## Project history
 
-This repository brings in an earlier AgentGate prototype in stages, together with the changes made during hackUMBC 2026 (September 26–27).
