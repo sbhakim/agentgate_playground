@@ -1,13 +1,41 @@
-# secrets
+# environment files
 .env
+.env.*
+!.env.example
 *.env.local
+*.pem
+*.key
+
 # python
 __pycache__/
-*.pyc
+*.py[cod]
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 .venv/
+venv/
+*.egg-info/
+build/
+
 # node
-frontend/node_modules/
+node_modules/
 frontend/dist/
-# logs
+frontend/.vite/
+*.tsbuildinfo
+npm-debug.log*
+yarn-error.log*
+
+# editors and OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# logs and temporary files
 *.log
+*.tmp
+tmp/
