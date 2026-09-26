@@ -31,7 +31,17 @@ For development with hot reload, run `cd backend && uvicorn app.main:app --reloa
 
 ## Replay and live mode
 
-Replay mode needs no key: it plays scripted proposals through the real policy checks. For live mode, copy `.env.example` to `.env` and set `ANTHROPIC_API_KEY`, or set `AGENTGATE_PROVIDER=openrouter` with `OPENROUTER_API_KEY`. Live runs are capped at 6 model turns and 8 tool proposals.
+Replay mode needs no key: it plays scripted proposals through the real policy checks. For live mode, copy `.env.example` to `.env` and choose a provider:
+
+- Gemini: `AGENTGATE_PROVIDER=gemini` with `GOOGLE_API_KEY` or `GEMINI_API_KEY` exported in your shell. If both exist, `GOOGLE_API_KEY` takes precedence. The example configuration selects Gemini with `gemini-3.5-flash-lite` as its default model.
+- Anthropic: `AGENTGATE_PROVIDER=anthropic` with `ANTHROPIC_API_KEY`.
+- OpenRouter: `AGENTGATE_PROVIDER=openrouter` with `OPENROUTER_API_KEY`.
+
+Set `AGENTGATE_MODEL` to override the selected provider's model; remove an old model setting when switching providers. Restart the server after configuration changes. Without a provider setting, the app keeps its original Anthropic default.
+
+An exported Google key needs no copy in `.env`. Keep real keys out of Git. Key detection does not verify model access or free quota; check your account's billing before live requests. Tests use mock responses and spend no API credits.
+
+Live runs are capped at 6 model turns and 8 tool proposals. Gemini proposals pass through the same policy checks and human approval as the other providers; failures never silently switch to replay.
 
 ## Limitations
 

@@ -96,7 +96,7 @@ def test_responses_leak_no_denied_content_or_secrets(client, monkeypatch):
 
 
 def test_live_mode_requires_configuration(client, monkeypatch):
-    for key in ("ANTHROPIC_API_KEY", "AGENTGATE_LIVE", "OPENROUTER_API_KEY"):
+    for key in ("ANTHROPIC_API_KEY", "AGENTGATE_LIVE", "OPENROUTER_API_KEY", "GOOGLE_API_KEY", "GEMINI_API_KEY"):
         monkeypatch.delenv(key, raising=False)
     h, _ = start(client)
     r = reset(client, h, scenario_id="normal", mode="live")

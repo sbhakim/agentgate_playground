@@ -4,9 +4,9 @@ import json
 import os
 from dataclasses import dataclass, field
 
-# "anthropic" calls the Claude API directly; "openrouter" goes through openrouter.ai.
 PROVIDER = os.environ.get("AGENTGATE_PROVIDER", "anthropic")
-DEFAULT_MODEL = "anthropic/claude-haiku-4.5" if PROVIDER == "openrouter" else "claude-opus-5"
+DEFAULT_MODEL = {"anthropic": "claude-opus-5", "openrouter": "anthropic/claude-haiku-4.5",
+                 "gemini": "gemini-3.5-flash-lite"}.get(PROVIDER, "")
 MODEL = os.environ.get("AGENTGATE_MODEL", DEFAULT_MODEL)
 EFFORT = os.environ.get("AGENTGATE_EFFORT", "medium") if PROVIDER == "anthropic" else "default"
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
@@ -75,14 +75,25 @@ class ModelTurn:
 
 
 def live_configured() -> bool:
+    if PROVIDER == "gemini":
+        return bool(os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY"))
     if PROVIDER == "openrouter":
         return bool(os.environ.get("OPENROUTER_API_KEY"))
+    if PROVIDER != "anthropic":
+        return False
     # AGENTGATE_LIVE=1 allows credentials from an `ant auth login` profile instead of a key.
     return bool(os.environ.get("ANTHROPIC_API_KEY")) or os.environ.get("AGENTGATE_LIVE") == "1"
 
 
 def make_adapter():
-    return OpenRouterAdapter() if PROVIDER == "openrouter" else AnthropicAdapter()
+    if PROVIDER == "gemini":
+        from .gemini_adapter import GeminiAdapter
+        return GeminiAdapter()
+    if PROVIDER == "openrouter":
+        return OpenRouterAdapter()
+    if PROVIDER == "anthropic":
+        return AnthropicAdapter()
+    raise ModelError("Unknown AGENTGATE_PROVIDER. Choose gemini, anthropic, or openrouter.")
 
 
 def build_system_prompt(documents: dict, contacts: dict) -> str:
