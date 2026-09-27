@@ -56,7 +56,10 @@ More detail: [`docs/architecture.md`](docs/architecture.md) and [`docs/demo.md`]
 
 -
 
-[Video(3 mins)] [https://photos.app.goo.gl/eQbybRXJjxQCRKUH6]
- [Slides](https://drive.google.com/file/d/1Wmle25lBTUHrTIq3dQIS7yHTcB2r3Rxr/view?usp=drivesdk), made at hackUMBC 2026
+- [Video(3 mins)] [https://photos.app.goo.gl/eQbybRXJjxQCRKUH6] Canva recording and Photos link. 
+-
+[Slides](https://drive.google.com/file/d/1Wmle25lBTUHrTIq3dQIS7yHTcB2r3Rxr/view?usp=drivesdk), made at hackUMBC 2026
+
 - [Infographic poster](https://drive.google.com/file/d/1ppJHhx0uRkV_1f2pGMt3KwKLJKUoy9Ro/view?usp=drivesdk), made with AI tools
+
 - [Infographic poster, first Canva draft](https://canva.link/x3sukdnx0kvvdy1)
