@@ -6,6 +6,10 @@
 
 A small sandbox where an AI assistant proposes tool calls and a policy gate decides whether each one runs. All tools are simulated; no real email or file access.
 
+![AgentGate Playground showing a restricted document request denied by the policy gate](docs/images/agentgate-panel.png)
+
+*Replay demo: reading the meeting notes is allowed, but the hidden instruction's request for the member roster is blocked.*
+
 ## What it shows
 
 - The assistant reads synthetic club documents and proposes actions: read a document, write a draft, send a draft.
