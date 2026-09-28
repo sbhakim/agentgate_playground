@@ -60,5 +60,6 @@ More detail: [`docs/architecture.md`](docs/architecture.md) and [`docs/demo.md`]
 
 - [Presentation slides](https://drive.google.com/file/d/1hFf6BMZFWwRppH1aowtE1NWaxkRCvFcz/view?usp=sharing) — an overview of the project and how it works.
 - [Infographic poster](https://drive.google.com/file/d/1EC5mUUZwFC5WpKTHOkC6occjGbtfWIc2/view?usp=sharing) — a visual walkthrough of how AgentGate works.
+- [Quick demo (60 seconds)](https://drive.google.com/file/d/1z41uPNM6P502xB1YbKTXcGNuryji-nsD/view?usp=sharing) — a short look at the playground in action.
 - [Demo video (3 minutes)](https://photos.app.goo.gl/eQbybRXJjxQCRKUH6) — watch the playground in action.
 - [Detailed Infographic poster](https://canva.link/x3sukdnx0kvvdy1).
