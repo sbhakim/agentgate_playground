@@ -65,3 +65,5 @@ To open a link in a new tab, Ctrl-click (Windows/Linux) or Cmd-click (Mac).
 - [Quick demo (60 seconds)](https://drive.google.com/file/d/1z41uPNM6P502xB1YbKTXcGNuryji-nsD/view?usp=sharing) — a short look at the playground in action.
 - [Demo video (3 minutes)](https://photos.app.goo.gl/eQbybRXJjxQCRKUH6) — watch the playground in action.
 - [Detailed Infographic poster](https://canva.link/x3sukdnx0kvvdy1).
+
+[Project website](https://agentgateplayground.design)
