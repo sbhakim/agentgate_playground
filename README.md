@@ -60,6 +60,6 @@ More detail: [`docs/architecture.md`](docs/architecture.md) and [`docs/demo.md`]
 -
 [Slides](https://drive.google.com/file/d/1Wmle25lBTUHrTIq3dQIS7yHTcB2r3Rxr/view?usp=drivesdk), made at hackUMBC 2026
 
-- [Infographic poster](https://drive.google.com/file/d/1ppJHhx0uRkV_1f2pGMt3KwKLJKUoy9Ro/view?usp=drivesdk), made with AI tools
+- [Infographic poster](https://drive.google.com/file/d/1EC5mUUZwFC5WpKTHOkC6occjGbtfWIc2/view?usp=sharing) — a visual walkthrough of how AgentGate works.
 
 - [Infographic poster, first Canva draft](https://canva.link/x3sukdnx0kvvdy1)
