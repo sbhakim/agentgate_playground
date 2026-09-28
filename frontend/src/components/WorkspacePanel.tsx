@@ -31,20 +31,26 @@ export function WorkspacePanel({ state }: { state: State }) {
     <section className="panel" aria-labelledby="ws-h">
       <div className="panel-head">
         <h2 id="ws-h"><span className="step-num">4</span>Workspace</h2>
-        <div className="tabs" role="tablist">
-          <button role="tab" aria-selected={tab === "drafts"} onClick={() => setTab("drafts")}>
+        <div className="tabs" role="tablist" aria-label="Workspace" onKeyDown={(event) => {
+          if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === "Home" ? "drafts" : event.key === "End" ? "outbox" : tab === "drafts" ? "outbox" : "drafts";
+          setTab(next);
+          document.getElementById(`tab-${next}`)?.focus();
+        }}>
+          <button id="tab-drafts" role="tab" aria-controls="workspace-content" tabIndex={tab === "drafts" ? 0 : -1} aria-selected={tab === "drafts"} onClick={() => setTab("drafts")}>
             Drafts<span className="count">{state.drafts.length}</span></button>
-          <button role="tab" aria-selected={tab === "outbox"} onClick={() => setTab("outbox")}>
+          <button id="tab-outbox" role="tab" aria-controls="workspace-content" tabIndex={tab === "outbox" ? 0 : -1} aria-selected={tab === "outbox"} onClick={() => setTab("outbox")}>
             Outbox<span className="count">{state.outbox.length}</span></button>
         </div>
       </div>
-      <div className="panel-body" role="tabpanel">
+      <div id="workspace-content" className="panel-body" role="tabpanel" aria-labelledby={`tab-${tab}`} tabIndex={0}>
         {tab === "drafts" && (state.drafts.length === 0
           ? <div className="empty">No drafts. Creating a draft never sends it.</div>
           : state.drafts.map((d) => (
             <article className="mail" key={d.id}>
               <div className="mail-top">
-                <span className="mono small">{d.id}</span>
+                <span className="small muted" title={d.id}><Icon name="mail" size={14} /> Email draft</span>
                 <span style={{ display: "flex", gap: 6 }}>
                   <LabelChip label={d.label} />
                   {d.sent ? <span className="badge badge-allow">Sent (mock)</span> : <span className="class-chip">not sent</span>}
@@ -59,7 +65,7 @@ export function WorkspacePanel({ state }: { state: State }) {
           ? <div className="empty">Outbox empty. Nothing has been sent, even in simulation.</div>
           : state.outbox.map((r) => (
             <article className="mail sent" key={r.receipt_id}>
-              <div className="mail-top"><span className="mono small">{r.receipt_id}</span><LabelChip label={r.label} /></div>
+              <div className="mail-top"><span className="small muted" title={r.receipt_id}>Simulated delivery</span><LabelChip label={r.label} /></div>
               <div className="mail-subject">{r.subject}</div>
               <div className="mail-to">To {r.recipient}</div>
             </article>

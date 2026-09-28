@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import type { ActionEntry, State, TimelineEntry } from "../types";
 import { Icon, LabelChip, RULE_TITLES, StatusBadge, describeAction, effectText, toolIcon } from "./ui";
 
@@ -39,13 +38,9 @@ export function ActionTimeline({ state, busy, selected, onSelect, onNext, onRese
   const latest = actions[actions.length - 1];
   let actionNo = 0;
 
-  // Keep the newest proposal on screen as the timeline grows.
-  useEffect(() => {
-    if (latest) document.getElementById(`act-${latest.seq}`)?.scrollIntoView({ block: "nearest" });
-  }, [latest?.seq, latest?.status]);
 
   return (
-    <section className="panel" aria-labelledby="timeline-h">
+    <section className="panel timeline-panel" aria-labelledby="timeline-h">
       <div className="panel-head">
         <h2 id="timeline-h"><span className="step-num">3</span>Action timeline</h2>
         <span className="small muted">
@@ -109,7 +104,6 @@ function ActionCard({ entry, n, open, onToggle }: { entry: ActionEntry; n: numbe
           {entry.source === "live" && <span className="class-chip">model</span>}
           {entry.from_injection && <span className="inject-chip"><Icon name="alert" size={11} />follows the hidden text</span>}</span>
         <span className="t-why" style={{ display: "block" }}>{why}</span>
-        <span className="t-rule">rule: {entry.approval ? entry.approval.rule_id : entry.rule_id}</span>
         {entry.status === "denied" && entry.without_gate && (
           <span className="without-gate"><b>Without the gate:</b> {entry.without_gate}</span>
         )}
@@ -164,7 +158,11 @@ function Inspector({ entry }: { entry: ActionEntry }) {
         {entry.reasons.map((r) => <li key={r}>{r}</li>)}
         {entry.approval && entry.approval.rule_id !== entry.rule_id && <li>After approval: {entry.approval.reasons[0]}</li>}
       </ul>
-      <div className="args" aria-label="Proposed arguments (truncated for display)">{JSON.stringify(entry.args, null, 2)}</div>
+      <details className="technical-details">
+        <summary>Technical details</summary>
+        <div className="t-rule">Rule: {entry.approval ? entry.approval.rule_id : entry.rule_id}</div>
+        <div className="args" aria-label="Proposed arguments (truncated for display)">{JSON.stringify(entry.args, null, 2)}</div>
+      </details>
     </div>
   );
 }

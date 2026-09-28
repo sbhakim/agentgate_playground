@@ -106,12 +106,12 @@ export default function App() {
           <span className="brand-mark"><Icon name="shield" size={22} /></span>
           <div>
             <h1>AgentGate Playground</h1>
-            <p>The model proposes. The policy decides. The tool runs only after the check.</p>
+            <p>The model proposes. The policy decides.</p>
           </div>
         </div>
         <div className="header-controls">
           <span className="safety-pill" title="Documents are synthetic fixtures, drafts live in memory, and the outbox is a list.">
-            <Icon name="shield" size={14} /><strong>Simulated tools</strong> · no real email or file access
+            <Icon name="shield" size={14} /><strong>Simulated workspace</strong>
           </span>
           <div className="segmented" role="group" aria-label="Mode">
             <button aria-pressed={state.mode === "replay"} disabled={busy}
