@@ -54,12 +54,8 @@ More detail: [`docs/architecture.md`](docs/architecture.md) and [`docs/demo.md`]
 
 ## Presentation materials
 
--
-
-- [Video(3 mins)] [https://photos.app.goo.gl/eQbybRXJjxQCRKUH6] Canva recording and Photos link. 
--
-[Slides](https://drive.google.com/file/d/1Wmle25lBTUHrTIq3dQIS7yHTcB2r3Rxr/view?usp=drivesdk), made at hackUMBC 2026
-
+- [Demo video (3 minutes)](https://photos.app.goo.gl/eQbybRXJjxQCRKUH6) — watch the playground in action.
+- [Presentation slides](https://drive.google.com/file/d/1Wmle25lBTUHrTIq3dQIS7yHTcB2r3Rxr/view?usp=drivesdk) — an overview of the project and how it works.
 - [Infographic poster](https://drive.google.com/file/d/1EC5mUUZwFC5WpKTHOkC6occjGbtfWIc2/view?usp=sharing) — a visual walkthrough of how AgentGate works.
 
-- [Infographic poster, first Canva draft](https://canva.link/x3sukdnx0kvvdy1)
+Earlier version: [Original Canva poster draft](https://canva.link/x3sukdnx0kvvdy1).
